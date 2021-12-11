@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_memories/screens/tabscreen.dart';
 import 'package:my_memories/screens/sign_in.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,12 +31,10 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.teal[200],
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
-              title: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Corinthia',
-                  // fontWeight: FontWeight.w600,
-                  color: Colors.white),
-              body1: TextStyle(fontFamily: 'Kanit'))),
+              title: GoogleFonts.comfortaa(
+                  color: Colors.white, fontWeight: FontWeight.bold),
+              body1: GoogleFonts.varelaRound(),
+              body2: TextStyle(fontFamily: 'DancingScript'))),
       routes: {
         '/': (ctx) =>
             TabScreen(), //here it should be signIn() but just for check i have placed homepag

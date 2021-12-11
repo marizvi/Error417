@@ -64,7 +64,9 @@ class _HomePageState extends State<TabScreen> {
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: Icon(Icons.home_filled),
-              title: Text('Home')),
+              title: Text(
+                'Home',
+              )),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: Icon(Icons.add_box_rounded),
