@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_memories/screens/memory_screen.dart';
 import 'package:my_memories/screens/tabscreen.dart';
 import 'package:my_memories/screens/sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx) =>
             TabScreen(), //here it should be signIn() but just for check i have placed homepag
+        '/memory_screen': (ctx) => MemoryScreen(),
       },
     );
   }

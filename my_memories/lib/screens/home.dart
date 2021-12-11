@@ -15,18 +15,21 @@ class HomePage extends StatelessWidget {
         Flexible(
           flex: 1,
           child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              color: Colors.teal[100],
-              height: 200,
+              padding: EdgeInsets.symmetric(vertical: 10),
+              color: Colors.blueGrey[900],
+              height: 210,
               child: CarouselSlider(
                 options: CarouselOptions(
                     height: 195, autoPlay: true, enlargeCenterPage: true),
                 items: _source.map((i) {
                   return Container(
                     width: MediaQuery.of(context).size.width,
-                    child: Image.network(
-                      i as String,
-                      fit: BoxFit.cover,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.network(
+                        i as String,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   );
                 }).toList(),
