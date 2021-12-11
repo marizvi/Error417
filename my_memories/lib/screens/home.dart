@@ -20,8 +20,8 @@ class HomePage extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
-              icon: Icon(Icons.category),
-              title: Text('Categories.')),
+              icon: Icon(Icons.home_filled),
+              title: Text('Home')),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: Icon(Icons.add_box_rounded),
