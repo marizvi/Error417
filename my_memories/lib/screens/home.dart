@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedPageIndex = 0;
+
+  void _selectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +24,10 @@ class HomePage extends StatelessWidget {
         // onTap: (index) {
         //   print(index);
         // }, //will automatically provide index
+        onTap: _selectPage,
         unselectedItemColor: Colors.white,
         selectedItemColor: Theme.of(context).accentColor,
-        // currentIndex: _selectedPageIndex,
+        currentIndex: _selectedPageIndex,
         type: BottomNavigationBarType
             .shifting, //adds slight animation to navigation bar
 
