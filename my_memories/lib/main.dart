@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_memories/screens/home.dart';
+import 'package:my_memories/screens/tabscreen.dart';
 import 'package:my_memories/screens/sign_in.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           ThemeData(primarySwatch: colorCustom, accentColor: Colors.teal[200]),
       routes: {
         '/': (ctx) =>
-            HomePage(), //here it should be signIn() but just for check i have placed homepag
+            TabScreen(), //here it should be signIn() but just for check i have placed homepag
       },
     );
   }
