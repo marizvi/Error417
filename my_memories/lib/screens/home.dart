@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:my_memories/widgets/memory_grid.dart';
 
 class HomePage extends StatelessWidget {
   final List _source = [
@@ -29,32 +30,15 @@ class HomePage extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                // [
-                //   Container(
-                //     margin: EdgeInsets.symmetric(horizontal: 2),
-                //     color: Colors.amber,
-                //   ),
-                //   Container(
-                //     margin: EdgeInsets.symmetric(horizontal: 2),
-                //     color: Colors.red,
-                //   ),
-                //   Container(
-                //     margin: EdgeInsets.symmetric(horizontal: 2),
-                //     color: Colors.blue,
-                //   ),
-                // ]
               )),
         ),
         SizedBox(
           height: 10,
         ),
-        // Flexible(
-        //   flex: 2,
-        //   child: Container(
-        //     // height: 200,
-        //     color: Colors.amber,
-        //   ),
-        // )
+        Flexible(
+          flex: 2,
+          child: MemoryGrid(),
+        )
       ],
     );
   }
