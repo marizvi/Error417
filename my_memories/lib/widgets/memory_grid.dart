@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_memories/widgets/memory_item.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/provider.dart';
 import '../providers/memories.dart';
@@ -16,8 +17,10 @@ class MemoryGrid extends StatelessWidget {
           crossAxisSpacing: 10, // spacing between columns
           mainAxisSpacing: 10, //space between rows
         ),
+        itemCount: memoriesdata.elements.length,
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
               value: memories[i],
+              child: Memory_Item(),
             ));
   }
 }
