@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_memories/providers/memories.dart';
+import 'package:my_memories/screens/add_memories.dart';
 import 'package:my_memories/screens/favorite_screen.dart';
 import 'package:my_memories/screens/home.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,13 @@ class TabScreen extends StatefulWidget {
 
 class _HomePageState extends State<TabScreen> {
   List<Map<String, Object>> _pages = [];
+  int _selectedPageIndex = 0;
+  bool _showOnlyFav = false;
+  void _selectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
+  }
 
   void initState() {
     _pages = [
@@ -21,7 +29,7 @@ class _HomePageState extends State<TabScreen> {
       },
       {
         //String: //Object
-        'page': FavoriteScreen(),
+        'page': AddMemories(),
         'title': 'Add Memories',
       },
       {
@@ -31,14 +39,6 @@ class _HomePageState extends State<TabScreen> {
       }
     ];
     super.initState();
-  }
-
-  int _selectedPageIndex = 0;
-
-  void _selectPage(int index) {
-    setState(() {
-      _selectedPageIndex = index;
-    });
   }
 
   @override

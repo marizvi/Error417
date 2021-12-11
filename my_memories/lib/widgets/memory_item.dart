@@ -19,30 +19,45 @@ class Memory_Item extends StatelessWidget {
       child: Card(
         elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        child: Container(
-          height: 250,
-          child: Column(
-            children: [
-              ClipRRect(
+        child: Column(
+          children: [
+            Flexible(
+              flex: 3,
+              child: ClipRRect(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 child: Image.network(
                   memory.imageUrl,
-                  height: 100,
+                  height: 90,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(3),
-                child: Text(
-                  memory.title,
-                  textAlign: TextAlign.center,
-                ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    memory.title,
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      memory.isFavorite
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                    ),
+                    onPressed: () {
+                      memory.toggleFavorite();
+                    },
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

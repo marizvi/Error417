@@ -16,6 +16,13 @@ class Memory with ChangeNotifier {
       required this.description,
       required this.imageUrl,
       this.isFavorite = false});
+
+  void toggleFavorite() {
+    print(isFavorite);
+    isFavorite = !isFavorite;
+    print(isFavorite);
+    notifyListeners();
+  }
 }
 
 class Memories with ChangeNotifier {
@@ -60,5 +67,30 @@ class Memories with ChangeNotifier {
 
   List<Memory> get elements {
     return [..._elements];
+  }
+
+  Memory findById(String id) {
+    return _elements.firstWhere((element) => element.id == id);
+  }
+
+  List<Memory> _favList = [];
+  // void addFav(Memory mem) {
+  //   // final existingIndex = _favList.indexWhere((element) => element.id == id);
+  //   final newProduct = Memory(
+  //       id: mem.id,
+  //       title: mem.title,
+  //       date: mem.date,
+  //       description: mem.description,
+  //       imageUrl: mem.imageUrl);
+  //   _favList.add(newProduct);
+  //   print(_favList.length);
+  //   // notifyListeners();
+  // }
+
+  List<Memory> get favEle {
+    return _elements.where((element) => element.isFavorite).toList();
+    // print("inLen");
+    // print(_favList.length);
+    // return _favList;
   }
 }

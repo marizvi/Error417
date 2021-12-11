@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/memories.dart';
 
-class MemoryScreen extends StatelessWidget {
+class MemoryScreen extends StatefulWidget {
+  @override
+  _MemoryScreenState createState() => _MemoryScreenState();
+}
+
+class _MemoryScreenState extends State<MemoryScreen> {
   @override
   Widget build(BuildContext context) {
     final memoryId = ModalRoute.of(context)?.settings.arguments as String;
-    final loadedMemory = Provider.of<Memories>(context)
-        .elements
-        .firstWhere((element) => element.id == memoryId);
+    final loadedMemory =
+        Provider.of<Memories>(context, listen: false).findById(memoryId);
     return Scaffold(
       appBar: AppBar(
         title: Text(loadedMemory.title),
@@ -16,8 +20,16 @@ class MemoryScreen extends StatelessWidget {
       body: Column(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(10),
+            // borderRadius: BorderRadius.only(),
             child: Image.network(loadedMemory.imageUrl),
+          ),
+          Container(
+            padding: EdgeInsets.all(8),
+            child: Text(
+              loadedMemory.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+            ),
           ),
           Container(
             decoration: BoxDecoration(
