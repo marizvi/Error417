@@ -25,8 +25,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme:
-          ThemeData(primarySwatch: colorCustom, accentColor: Colors.teal[200]),
+      theme: ThemeData(
+          primarySwatch: colorCustom,
+          accentColor: Colors.teal[200],
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              title: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'Corinthia',
+                  // fontWeight: FontWeight.w600,
+                  color: Colors.white),
+              body1: TextStyle(fontFamily: 'Kanit'))),
       routes: {
         '/': (ctx) =>
             TabScreen(), //here it should be signIn() but just for check i have placed homepag

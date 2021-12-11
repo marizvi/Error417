@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_memories/screens/favorite_screen.dart';
+import 'package:my_memories/screens/home.dart';
 
 class TabScreen extends StatefulWidget {
   @override
@@ -6,6 +8,29 @@ class TabScreen extends StatefulWidget {
 }
 
 class _HomePageState extends State<TabScreen> {
+  List<Map<String, Object>> _pages = [];
+
+  void initState() {
+    _pages = [
+      {
+        //String: //Object
+        'page': HomePage(),
+        'title': 'App Name',
+      },
+      {
+        //String: //Object
+        'page': FavoriteScreen(),
+        'title': 'Add Memories',
+      },
+      {
+        //String: //Object
+        'page': FavoriteScreen(),
+        'title': 'Your Favourites',
+      }
+    ];
+    super.initState();
+  }
+
   int _selectedPageIndex = 0;
 
   void _selectPage(int index) {
@@ -18,8 +43,12 @@ class _HomePageState extends State<TabScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('App Name'),
+        title: Text(
+          _pages[_selectedPageIndex]['title'] as String,
+          style: Theme.of(context).textTheme.title,
+        ),
       ),
+      body: _pages[_selectedPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         // onTap: (index) {
         //   print(index);
