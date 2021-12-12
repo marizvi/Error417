@@ -39,8 +39,10 @@ class Memories with ChangeNotifier {
             'https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         images: [
           'https://pix10.agoda.net/geo/city/318/1_318_02.jpg?',
+          'https://pix10.agoda.net/geo/city/318/1_318_02.jpg?',
           'https://i.natgeofe.com/k/5b396b5e-59e7-43a6-9448-708125549aa1/new-york-statue-of-liberty.jpg',
           'https://worldstrides.com/wp-content/uploads/2015/07/iStock_000040849990_Large.jpg',
+          'https://pix10.agoda.net/geo/city/318/1_318_02.jpg?',
         ]),
     Memory(
         id: 'e2',
@@ -53,7 +55,6 @@ class Memories with ChangeNotifier {
         images: [
           'http://www.tajmahal.gov.in/images/banners/1.jpg',
           'https://images.theconversation.com/files/228805/original/file-20180723-189308-12b3agf.jpg?',
-          'https://cdnbbsr.s3waas.gov.in/s3e0a209539d1e74ab9fe46b9e01a19a97/uploads/2019/04/2019040992.png'
         ]),
     Memory(
         id: 'e3',
