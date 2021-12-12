@@ -21,7 +21,10 @@ class HomePage extends StatelessWidget {
               height: 210,
               child: CarouselSlider(
                 options: CarouselOptions(
-                    height: 195, autoPlay: true, enlargeCenterPage: true),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    height: 195,
+                    autoPlay: true,
+                    enlargeCenterPage: true),
                 items: _source.map((i) {
                   return Container(
                     width: MediaQuery.of(context).size.width,
