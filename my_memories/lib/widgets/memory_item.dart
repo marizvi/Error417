@@ -23,16 +23,37 @@ class Memory_Item extends StatelessWidget {
           children: [
             Flexible(
               flex: 3,
-              child: ClipRRect(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10)),
-                child: Image.network(
-                  memory.imageUrl,
-                  height: 90,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+              child: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    child: Image.network(
+                      memory.imageUrl,
+                      height: 90,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: Container(
+                        padding: EdgeInsets.only(top: 4, right: 4),
+                        width: 110,
+                        height: 25,
+                        color: Colors.black54,
+                        child: Text(
+                          memory.title,
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              fontSize: 15),
+                        ),
+                      ))
+                ],
               ),
             ),
             Flexible(
@@ -40,9 +61,20 @@ class Memory_Item extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
-                    memory.title,
-                    style: TextStyle(fontWeight: FontWeight.w700),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.calendar_today,
+                        size: 16,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        DateFormat.yMMM().format(memory.date),
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
                   ),
                   IconButton(
                     icon: Icon(
