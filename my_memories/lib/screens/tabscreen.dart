@@ -51,6 +51,10 @@ class _HomePageState extends State<TabScreen> {
               _pages[_selectedPageIndex]['title'] as String,
               style: Theme.of(context).textTheme.title,
             ),
+            actions: [
+              IconButton(
+                  onPressed: () {}, icon: Icon(Icons.account_circle_sharp))
+            ],
           ),
           body: _pages[_selectedPageIndex]['page'] as Widget,
           bottomNavigationBar: BottomNavigationBar(

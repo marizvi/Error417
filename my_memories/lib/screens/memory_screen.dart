@@ -11,6 +11,13 @@ class MemoryScreen extends StatefulWidget {
 }
 
 class _MemoryScreenState extends State<MemoryScreen> {
+  void selection(BuildContext ctx, String url) {
+    Navigator.of(ctx).pushNamed(
+      '/preview',
+      arguments: url,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final memoryId = ModalRoute.of(context)?.settings.arguments as String;
@@ -89,9 +96,13 @@ class _MemoryScreenState extends State<MemoryScreen> {
                           height: 40,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                              loadedMemory.images[index],
-                              fit: BoxFit.cover,
+                            child: InkWell(
+                              onTap: () => selection(
+                                  context, loadedMemory.images[index]),
+                              child: Image.network(
+                                loadedMemory.images[index],
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           )),
                     );

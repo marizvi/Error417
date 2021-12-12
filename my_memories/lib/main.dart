@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_memories/screens/memory_screen.dart';
+import 'package:my_memories/screens/preview.dart';
 import 'package:my_memories/screens/tabscreen.dart';
 import 'package:my_memories/screens/sign_in.dart';
 import 'package:provider/provider.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           '/': (ctx) =>
               TabScreen(), //here it should be signIn() but just for check i have placed homepag
           '/memory_screen': (ctx) => MemoryScreen(),
+          '/preview': (ctx) => Preview(),
         },
       ),
     );

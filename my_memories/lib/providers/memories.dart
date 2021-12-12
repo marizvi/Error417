@@ -66,7 +66,8 @@ class Memories with ChangeNotifier {
             'https://vajiramandravi.s3.us-east-1.amazonaws.com/media/2021/1/16/11/44/59/STATUE_OF_UNITYY.jpg',
         images: [
           'https://assets.telegraphindia.com/telegraph/35ba88d9-1e03-4c46-90cb-ff5d06e2b1ad.jpg',
-          'https://assets.telegraphindia.com/telegraph/35ba88d9-1e03-4c46-90cb-ff5d06e2b1ad.jpg',
+          'https://ihplb.b-cdn.net/wp-content/uploads/2018/12/blog.jpg',
+          'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2013/10/31/1383234856303/Statue-of-Unity-planned-i-009.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=7ed3150921a3ce77162be432a82c34b0',
           'https://assets.telegraphindia.com/telegraph/35ba88d9-1e03-4c46-90cb-ff5d06e2b1ad.jpg',
         ]),
     Memory(
